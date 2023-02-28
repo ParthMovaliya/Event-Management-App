@@ -1,0 +1,96 @@
+.sidebar {
+  background: rgb(0, 7, 61, 0.6 );
+  color: white;
+  height: 100vh;
+  position: fixed;
+  display: inline-block;
+  backdrop-filter: blur(5px);
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.top_section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 10px;
+}
+
+.logo {
+  font-size: 18px;
+  line-height: 0;
+}
+
+.bars{
+    margin-left: 0rem;
+}
+
+.bars2nd{
+    display: none;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  height: 30px;
+  padding-left: 10px;
+}
+
+.search input {
+  border: none;
+  margin-left: 10px;
+  border-radius: 5px;
+  background: rgb(238, 238, 238);
+}
+
+.link {
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 10px;
+  transition: 0.2s ;
+  border-right: 1px solid transparent;
+}
+
+.link:hover {
+  border-right: 4px solid white;
+  transition: 0.2s ;
+  background: rgb(45, 51, 89);
+}
+
+.active{
+    border-right: 4px solid white;
+    background: rgb(45, 51, 89);
+}
+
+.link_name{
+    white-space: nowrap;
+    font-size: 15px;
+}
+.main{
+    padding: 1.2rem;
+}
+
+/* -----------------------Media Queries(MD)----------------------- */
+@media screen and (max-width:1024px) {
+    .cursor{
+        display: none;
+    }
+    
+}
+    
+
+/* -----------------------Media Queries(SM)----------------------- */
+@media screen and (max-width:600px) {
+    .sidebar-back{
+        display: none;
+    }
+    .main{
+        padding-left: 3rem;
+    }
+}
