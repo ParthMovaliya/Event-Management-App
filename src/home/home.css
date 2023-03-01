@@ -1,6 +1,6 @@
 .home{
     height: 80vh;
-    width: 97.4vw;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,7 +36,7 @@
 
 .slider_image{
     width: 97vw;
-    /* height: 80vh; */
+    height: 80vh;
     display: flex;
     align-items: center;
     z-index: 99;
@@ -47,7 +47,6 @@
     position: absolute;
     left: 3rem;
     background-color: transparent;
-    text-shadow: 0px 1px #FF0000,0px -1px #FF0000,-1px 0px #FF0000,1px 0px #FF0000;
 }
 
 .right_slide{
@@ -63,4 +62,14 @@
     color: white;
     border-radius: 50%;
     backdrop-filter: blur(10px);
+}
+
+/* -----------------------Media Queries(MD)----------------------- */
+@media screen and (max-width: 1024px) {
+    
+}
+  
+/* -----------------------Media Queries(SM)----------------------- */
+@media screen and (max-width: 600px) {
+    
 }
