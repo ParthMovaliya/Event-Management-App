@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from "framer-motion"
 import "./navbar.css"
 import { FaHome, FaBars } from "react-icons/fa"
@@ -34,7 +34,7 @@ const Navbar = ({ children }) => {
       }
     },
     show: {
-      width: "150px",
+      width: "160px",
       padding: "5px 10px",
       opecity: 1,
       transition: {
@@ -60,35 +60,35 @@ const Navbar = ({ children }) => {
     }
   }
 
-  const [mousePosition,setMousePosition] = useState({
-    x:0,
-    y:0
+  const [mousePosition, setMousePosition] = useState({
+    x: 0,
+    y: 0
   });
-  const [cursorVarient,setCursorVarient] = useState("default")
+  const [cursorVarient, setCursorVarient] = useState("default")
 
-  useEffect(()=>{
+  useEffect(() => {
     const mouseMove = (e) => {
       setMousePosition({
-        x:e.clientX,
-        y:e.clientY
+        x: e.clientX,
+        y: e.clientY
       })
     }
-    window.addEventListener("mousemove",mouseMove)
-    return () =>{
-      window.removeEventListener("mousemove",mouseMove);
+    window.addEventListener("mousemove", mouseMove)
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
     }
-  },[]);
+  }, []);
 
   const variants = {
     default: {
-      x:mousePosition.x - 12,
-      y:mousePosition.y - 12
+      x: mousePosition.x - 12,
+      y: mousePosition.y - 12
     },
     big: {
       height: 64,
       width: 64,
-      x:mousePosition.x - 32,
-      y:mousePosition.y - 32
+      x: mousePosition.x - 32,
+      y: mousePosition.y - 32
     }
   }
 
@@ -98,7 +98,7 @@ const Navbar = ({ children }) => {
   return (
 
     <div className="main-container" >
-      <motion.div className='cursor' variants={variants} animate={cursorVarient}/>
+      <motion.div className='cursor' variants={variants} animate={cursorVarient} />
       <motion.div animate={{
         width: isOpen ? "200px" : "40px", transition: {
           duration: 0.5,
@@ -108,7 +108,7 @@ const Navbar = ({ children }) => {
       }} className="sidebar">
         <div className="top_section">
           {isOpen && <motion.h1 className="logo" initial="hidden" animate="show" exit="hidden" variants={linkTextAnimation} onMouseEnter={enterText} onMouseLeave={leaveText}>GOD E-SPORTS</motion.h1>}
-          <div className="bars"><FaBars onClick={toggle} /><FaBars className='bars2nd' /></div>
+          <div className="bars"><FaBars onClick={toggle} /></div>
         </div>
         <div className="search">
           <div className="search_icon"><BiSearch /></div>
@@ -127,9 +127,7 @@ const Navbar = ({ children }) => {
           ))}
         </section>
       </motion.div>
-      <motion.div animate={{
-        width: isOpen ? "200px" : "45px"
-      }} className="sidebar-back"></motion.div>
+      <motion.div animate={{ width: isOpen ? "200px" : "40px" }} className="sidebar-back"></motion.div>
       <main className="main">{children}</main>
     </div>
   )
