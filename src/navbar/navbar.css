@@ -1,24 +1,41 @@
+.cursor {
+  background-color: black;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 99;
+}
+
+.sz600{
+  display: none;
+}
+
 .sidebar {
-  background: rgb(0, 7, 61, 0.6 );
+  background: rgb(0, 7, 61, 0.7);
   color: white;
   height: 100vh;
   position: fixed;
   display: inline-block;
   padding-right: 0px;
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+  z-index: 9999;
 }
 
-.main-container{
-    display: flex;
-    flex-direction: row;   
-  }
-
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
 
 .top_section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 10px;
+  margin: 15px 10px;
 }
 
 .logo {
@@ -28,26 +45,28 @@
 
 .search {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-right: 5px;
+  /* align-items: center; */
+  /* gap: 10px; */
+  /* justify-content: center; */
   height: 30px;
   margin-bottom: 5px;
+  margin-left: 0px;
 }
 
-.search_icon{
-  padding: 0 10px 0 10px;
+.search_icon {
   display: flex;
   align-items: center;
+  margin-left: 10px;
 }
 
 .search input {
   border: none;
-  /* margin-left: 10px; */
   padding-inline-end: 0%;
   border-radius: 5px;
   background: rgb(238, 238, 238);
   padding-right: 10px;
+  padding: 5px 0px;
+  margin-left: 10px;
 }
 
 .link {
@@ -55,44 +74,102 @@
   color: white;
   gap: 10px;
   padding: 5px 10px;
-  transition: 0.2s ;
+  transition: 0.2s;
   /* border-right: 1px solid transparent; */
 }
 
 .link:hover {
   border-right: 4px solid white;
-  transition: 0.2s ;
+  transition: 0.2s;
   background: rgb(45, 51, 89);
 }
 
-.active{
-    border-right: 4px solid white;
-    background: rgb(45, 51, 89);
+.active {
+  border-right: 4px solid white;
+  background: rgb(45, 51, 89);
 }
 
-.link_name{
-    white-space: nowrap;
-    font-size: 15px;
-}
-.main{
-    padding: 1.2rem;
+.link_name {
+  white-space: nowrap;
+  font-size: 15px;
 }
 
 /* -----------------------Media Queries(MD)----------------------- */
-@media screen and (max-width:1024px) {
-    .cursor{
-        display: none;
-    }
-    
+@media screen and (max-width: 1024px) {
+  .cursor {
+    display: none;
+  }
+  .media {
+    display: flex;
+    flex-direction: column;
+  }
 }
-    
 
 /* -----------------------Media Queries(SM)----------------------- */
-@media screen and (max-width:600px) {
-    .sidebar-back{
-        display: none;
+@media screen and (max-width: 600px) {
+  .main-container {
+    flex-direction: column;
+  }
+  .seatchtxt_sz600{
+    width: 150px;
+    padding: 5px 10px;
+  }
+  .sidebar-back {
+    display: none;
+  }
+  .main {
+    padding-left: 0rem;
+  }
+  .left_lr_split {
+    display: none;
+  }
+  .right_lr_split {
+    display: flex;
+    padding-top: 1rem;
+  }
+  .sz600 {
+    display: flex;
+    width: 100vw;
+    height: 4rem;
+    display: flex;
+    background: rgb(0, 7, 61, 0.7);
+  }
+  .logo_sz600 {
+    position: absolute;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    border: 1px solid whitesmoke;
+    font-size: 1.5rem;
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+  }
+  .menu_sz600{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+  .name_sz600{
+    width: 100%;
+    overflow: hidden;
+    font-size: 2rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    animation: name_animation 2s ease-in-out infinite alternate;
+    color: white;
+  }
+  @keyframes name_animation {
+    from{
+      text-shadow: 0px 25px 3px blueviolet, 0px -25px 3px burlywood, 0px -1px white, -1px 0px white, 0px 1px white, 1px 0px white;;
+      color: black;
+      
     }
-    .main{
-        padding-left: 3rem;
+    to{
+
     }
+  }
 }
