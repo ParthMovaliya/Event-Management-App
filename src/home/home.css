@@ -16,7 +16,7 @@
     position: absolute;
     width: 50vw;
     aspect-ratio: 16/9;
-    height: 60vh;
+    height: 65vh;
     overflow: hidden;
     background: white;
     border-radius: 30px;
@@ -63,13 +63,70 @@
     border-radius: 50%;
     backdrop-filter: blur(10px);
 }
+.szOriginal{
+    position: relative;
+}
+.sz1024{
+    position: relative;
+    display: none;
+}
+.sz600{
+    position: relative;
+    display: none;
+}
 
 /* -----------------------Media Queries(MD)----------------------- */
 @media screen and (max-width: 1024px) {
-    
+    .szOriginal{
+        display: none;
+    }
+    .sz1024{
+        display: flex;
+    }
+    .home{
+        height: 55vh;
+    }
+    .container{
+        width: 80vw;
+        height: 45vh;
+        top: -23vh;
+    }
+    .slider_btn{
+        padding: 8px;
+        font-size: 3rem;
+    }
+    .left_slide{
+        left: 1rem;
+    }
+    .right_slide{
+        right: 1rem;
+    }
 }
   
 /* -----------------------Media Queries(SM)----------------------- */
 @media screen and (max-width: 600px) {
-    
+    .sz1024{
+        display: none;
+    }
+    .sz600{
+        display: flex;
+    }
+    .home{
+        height: 48vh;
+    }
+    .container{
+        width: 90vw;
+        height: 35vh;
+        top: -17.5vh;
+    }
+    .slider_btn{
+        padding: 5px;
+        font-size: 2rem;
+    }
+    .left_slide{
+        left: 0rem;
+    }
+    .right_slide{
+        right: 0rem;
+    }
 }
