@@ -1,26 +1,74 @@
-import React from 'react'
+import React,{ useState } from 'react'
 import "./login.css"
+import { CSSTransition } from "react-transition-group"
+import Card from "./Card"
+import { motion } from 'framer-motion'
 
-const Login = () => {
-  return (
-    <div>
-      <h1>Hello</h1>
-      <form action="" className='login_form'>
-        <div className='login_details'>
-        <input type="email" name="" id="" placeholder='Email'/>
-        <input type="password" name="" id="" placeholder='Password'/>
-        <button type="submit">Login</button>
+const dropIn = {
+  // hidden: {
+  //     y: "-100vh",
+  //     opacity: 0,
+  // },
+  // visible: {
+  //     y: "0",
+  //     opacity: 1,
+  //     transition: {
+  //         duration: 0.1,
+  //         type: "spring",
+  //         damping: 25,
+  //         stiffness: 500,
+  //     },
+  // },
+  // exit: {
+  //     y: "100vh",
+  //     opacity: 0,
+  // }
+  hidden: {
+    transform: "scale(0) rotateX(-360deg)",
+    opacity: 0,
+    transition: {
+      delay: 0.3,
+    },
+  },
+  visible: {
+    transform: " scale(1) rotateX(0deg)",
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+    },
+  },
+  exit: {
+    transform: "scale(0) rotateX(360deg)",
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+    }
+  }
+}
+
+const Login = () => { 
+
+  const [showFront, setShowFront] = useState(true);
+    return(
+        <motion.div variants={dropIn} initial="hidden" animate="visible" exit="exit" className="login_page">
+          <div className="flippable-card-container">
+            <CSSTransition
+                in={showFront}
+                timeout={300}
+                classNames='flip'
+            >
+                <Card onClick={() => {
+                    setShowFront((v) => !v);
+                }}/>
+            </CSSTransition>
         </div>
-        <div className='login_register'>
-          <label>Register?</label>
-          <button type="submit">Register</button>
-        </div>
-      </form>
-    </div>
-  )
+        </motion.div>
+    );
+
 }
 
 export default Login
+
 
 // {/* ====================================sz600==================================== */}
 // <div className='sz600'>
