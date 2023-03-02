@@ -4,20 +4,18 @@ import "./login.css"
 const Login = () => {
   return (
     <div>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
-      <h1>Login</h1>
-      <h1>Submit</h1>
+      <h1>Hello</h1>
+      <form action="" className='login_form'>
+        <div className='login_details'>
+        <input type="email" name="" id="" placeholder='Email'/>
+        <input type="password" name="" id="" placeholder='Password'/>
+        <button type="submit">Login</button>
+        </div>
+        <div className='login_register'>
+          <label>Register?</label>
+          <button type="submit">Register</button>
+        </div>
+      </form>
     </div>
   )
 }
